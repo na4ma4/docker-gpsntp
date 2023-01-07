@@ -1,4 +1,4 @@
-DOCKER_REPO := ghcr.io/na4ma4/gps-server
+DOCKER_REPO ?= ghcr.io/na4ma4/gps-server
 DOCKER_PLATFORMS += linux/amd64 linux/arm64
 
 -include .makefiles/Makefile
