@@ -21,9 +21,12 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/*
 
 COPY ntp.conf /etc/ntpsec/ntp.conf
+COPY init.sh /init.sh
 
 VOLUME [ "/var/log/ntpsec" ]
 
 RUN mkdir /var/log/ntpsec && chown ntpsec:ntpsec /var/log/ntpsec
+
+ENTRYPOINT [ "/init.sh" ]
 
 CMD [ "/usr/sbin/ntpd", "-g", "-N", "-n", "-c", "/etc/ntpsec/ntp.conf" ]

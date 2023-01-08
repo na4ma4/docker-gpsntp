@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 rm /dev/ttyAMA0 /dev/pps0
 
